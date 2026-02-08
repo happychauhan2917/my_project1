@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Events | Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="main-header">
+<div class="logo">
+  <a href="index.html">Happy Events ✨</a>
+</div>
+
+  <nav class="navbar">
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <h1>Gallery 📸</h1>
+  <p>Moments we created, memories we captured</p>
+</section>
+
+<!-- ===== GALLERY GRID ===== -->
+<section class="content-wrapper">
+  <div class="gallery-grid">
+
+    <img src="anchor.jpeg" onclick="openLightbox(this.src)">
+    <img src="annualgroup.jpeg" onclick="openLightbox(this.src)">
+    <img src="fwgroup.jpeg" onclick="openLightbox(this.src)">
+    <img src="fwqueen2.jpeg" onclick="openLightbox(this.src)">
+    <img src="celeb.jpeg" onclick="openLightbox(this.src)">
+    <img src="anchor2.jpeg" onclick="openLightbox(this.src)">
+    <img src="groupp2.jpeg" onclick="openLightbox(this.src)">
+    <img src="annualgroup2.jpeg" onclick="openLightbox(this.src)">
+    <img src="fwgroup2.jpeg" onclick="openLightbox(this.src)">
+    <img src="fwqueen.jpeg" onclick="openLightbox(this.src)">
+    <img src="volunteer.jpeg" onclick="openLightbox(this.src)">
+    <img src="annualgroup3.jpeg" onclick="openLightbox(this.src)">
+    <img src="groupp.jpeg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<!-- ===== LIGHTBOX ===== -->
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2025 Happy Events</p>
+</footer>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox").style.display = "flex";
+  document.getElementById("lightbox-img").src = src;
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>

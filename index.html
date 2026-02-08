@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Events | Home</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
+<!-- AOS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="main-header">
+  <div class="logo">
+  <a href="index.html">Happy Events ✨</a>
+</div>
+
+
+  <nav class="navbar">
+    <ul class="menu">
+
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="about.html">About ▾</a>
+        <ul class="submenu">
+          <li><a href="who-i-am.html">Who We Are</a></li>
+          <li><a href="my-journey.html">Our Journey</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="services.html">Services ▾</a>
+        <ul class="submenu">
+          <li><a href="event-hosting.html">Event Hosting</a></li>
+          <li><a href="event-management.html">Event Management</a></li>
+          <li><a href="celeb-collab.html">Celeb Collaborations</a></li>
+          <li><a href="ticket-venue.html">Tickets & Venue</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="events.html">Events ▾</a>
+        <ul class="submenu">
+          <li><a href="annual-function.html">Annual Functions</a></li>
+          <li><a href="farewell.html">Farewells</a></li>
+          <li><a href="corporate-events.html">Corporate Events</a></li>
+          <li><a href="private-parties.html">Private Parties</a></li>
+        </ul>
+      </li>
+<li><a href="gallery.html">Gallery</a></li>
+
+      <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="hero-slider">
+  <div class="hero-slide active" style="background-image:url('fwgroup2.jpeg')"></div>
+  <div class="hero-slide" style="background-image:url('annualgroup2.jpeg')"></div>
+  <div class="hero-slide" style="background-image:url('groupp2.jpeg')"></div>
+  <div class="hero-slide" style="background-image:url('event1.jpg')"></div>
+
+  <div class="hero-overlay">
+    <h1>Happy Events</h1>
+    <p>Where Moments Become Memories ✨</p>
+    <a href="contact.html" class="btn">Book Your Event</a>
+  </div>
+
+  <button class="hero-arrow left" onclick="prevSlide()">❮</button>
+  <button class="hero-arrow right" onclick="nextSlide()">❯</button>
+</section>
+
+<!-- SERVICES PREVIEW -->
+<section class="services" data-aos="fade-up">
+  <h2>What We Do 💼</h2>
+
+  <div class="service-cards">
+    <a href="event-hosting.html" class="card">
+      <h3>Event Hosting</h3>
+      <p>Confident, elegant hosting for every stage.</p>
+    </a>
+
+    <a href="event-management.html" class="card">
+      <h3>Event Management</h3>
+      <p>Complete planning and flawless execution.</p>
+    </a>
+
+    <a href="celeb-collab.html" class="card">
+      <h3>Celeb Collaborations</h3>
+      <p>Meet & greets and stage appearances.</p>
+    </a>
+  </div>
+</section>
+
+<section class="marquee-section">
+  <h2>Moments We’ve Created ✨</h2>
+
+  <div class="marquee-wrapper">
+    <div class="marquee-track">
+      <img src="fwgroup2.jpeg" />
+      <img src="annualgroup2.jpeg" />
+      <img src="groupp2.jpeg" />
+      <img src="fwgroup.jpeg" />
+      <img src="event2.jpg" />
+      <img src="fwqueen.jpeg" />
+      <img src="fwqueen2.jpeg" />
+      <img src="groupp.jpeg" />
+
+      <img src="fwgroup2.jpeg" />
+      <img src="annualgroup2.jpeg" />
+      <img src="groupp2.jpeg" />
+      <img src="fwgroup.jpeg" />
+      <img src="event2.jpg" />
+      <img src="fwqueen.jpeg" />
+      <img src="fwqueen2.jpeg" />
+      <img src="groupp.jpeg" />
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Happy Events | Crafted by Happy Chauhan</p>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1200, once:true });
+</script>
+
+<script>
+const heroImages = [
+  "fwgroup.jpeg",
+  "annualgroup2.jpeg",
+  "groupp2.jpeg",
+  "event1.jpg",
+  "event2.jpg",
+  "event3.jpg"
+];
+
+let index = 0;
+const hero = document.getElementById("hero");
+
+setInterval(() => {
+  hero.style.backgroundImage =
+    `linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url(${heroImages[index]})`;
+  index = (index + 1) % heroImages.length;
+}, 4500);
+</script>
+
+<script>
+const gallery = document.getElementById("gallery");
+let autoScroll = setInterval(() => {
+  gallery.scrollLeft += 1;
+}, 20);
+
+gallery.addEventListener("mouseenter", () => clearInterval(autoScroll));
+gallery.addEventListener("mouseleave", () => {
+  autoScroll = setInterval(() => {
+    gallery.scrollLeft += 1;
+  }, 20);
+});
+</script>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.navbar').classList.toggle('active');
+}
+</script>
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll(".hero-slide");
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[index].classList.add("active");
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+</script>
+
+</body>
+</html>

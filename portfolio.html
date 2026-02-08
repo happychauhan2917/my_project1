@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Events | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">Happy Events ✨</div>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+  <nav class="navbar">
+    <ul class="menu">
+
+      <li><a href="index.html">Home</a></li>
+
+      <li class="dropdown">
+        <a href="about.html">About ▾</a>
+        <ul class="submenu">
+          <li><a href="about.html#who">👩‍💼 Who I Am</a></li>
+          <li><a href="about.html#journey">✨ My Journey</a></li>
+          <li><a href="about.html#achievements">🏆 Achievements</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="services.html">Services ▾</a>
+        <ul class="submenu">
+          <li><a href="event-hosting.html">🎤 Event Hosting</a></li>
+          <li><a href="event-management.html">📋 Event Management</a></li>
+          <li><a href="celeb-collab.html">🌟 Celeb Collaborations</a></li>
+          <li><a href="ticket-venue.html">🎟 Ticket & Venue</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="events.html">Events ▾</a>
+        <ul class="submenu">
+          <li><a href="events.html#annual">🎉 Annual Functions</a></li>
+          <li><a href="events.html#farewell">🎓 Farewells</a></li>
+          <li><a href="events.html#corporate">🏢 Corporate</a></li>
+          <li><a href="events.html#private">🥂 Private Parties</a></li>
+        </ul>
+      </li>
+
+      <li><a href="contact.html">Contact</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="portfolio" data-aos="fade-up">
+<h2>My Events Gallery 📸</h2>
+<div class="portfolio-slider">
+  <img src="fwqueen2.jpeg" alt="Event 1">
+  <img src="groupp2.jpeg" alt="Event 2">
+  <img src="groupp.jpeg" alt="Event 3">
+  <img src="annualgroup3.jpeg" alt="Event 4">
+  <img src="volunteer.jpeg" alt="Event 5">
+  <img src="anchor.jpeg" alt="Event 6">
+  <img src="annualgroup2.jpeg" alt="Event 7">
+  <img src="fwqueen.jpeg" alt="Event 8">
+  <img src="celeb.jpeg" alt="Event 9">
+  <img src="anchor2.jpeg" alt="Event 10">
+  <img src="fwgroup.jpeg" alt="Event 11">
+  <img src="annualgroup.jpeg" alt="Event 12">
+  <img src="fwgroup2.jpeg" alt="Event 13">
+</div>
+</section>
+
+<footer>
+<p>© 2025 Happy Events | Crafted by Happy Chauhan</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 1200 });
+
+  const slider = document.querySelector('.portfolio-slider');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', (e) => {
+    isDown = true;
+    slider.classList.add('active');
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => { isDown = false; slider.classList.remove('active'); });
+  slider.addEventListener('mouseup', () => { isDown = false; slider.classList.remove('active'); });
+  slider.addEventListener('mousemove', (e) => {
+    if(!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+</script>
+<script>
+function toggleMenu() {
+  document.querySelector('.navbar').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
